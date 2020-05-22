@@ -1,0 +1,17 @@
+﻿<bg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://monkeymanboy.github.io/BSML-Docs/ https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd">
+  <vertical active="~map-active" child-align="UpperLeft" child-control-width="true" size-delta-x="95" pref-width="95">
+    <text align="TopLeft" text="~key" font-size="8"/>
+    <text align="TopLeft" text="~rating" font-size="8"/>
+    <text align="TopLeft" text="~downloads" font-size="8"/>
+    <text align="TopLeft" text="~upvotes" font-size="8"/>
+    <text align="TopLeft" text="~downvotes" font-size="8"/>
+    <!--<button ignore-layout="true" text="Toggle Rating Colors" anchor-pos-x="30" anchor-pos-y="-5" on-click="toggle"/>-->
+    <!--<button ignore-layout="true" text="Description" anchor-pos-x="37" anchor-pos-y="-15" event-click="open-desc"/>-->
+  </vertical>
+  <vertical active="~map-not-active">
+    <text text="Map is not on BeatSaver" font-size="5" align="Center"/>
+  </vertical>
+  <modal clickerino-offerino-closerino="true" show-event="open-desc" hide-event="close-desc" size-delta-x="100" size-delta-y="60">
+    <text-page text="Hello Gordan"/>
+  </modal>
+</bg>

@@ -1,0 +1,14 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/beat-saber-modding-group/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "SongInfoViewer",
+  "name": "SongInfoViewer",
+  "author": "Auros",
+  "version": "1.0.0",
+  "description": "A Beat Saber mod which allows you to easily look at the BeatSaver song data of the selected song.",
+  "gameVersion": "1.9.1",
+  "dependsOn": {
+    "BeatSaberMarkupLanguage": "^1.3.2",
+    "SongDataCore": "^1.3.3"
+  },
+  "features": []
+}
