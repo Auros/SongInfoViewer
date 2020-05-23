@@ -3,7 +3,7 @@
   "id": "SongInfoViewer",
   "name": "SongInfoViewer",
   "author": "Auros",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A Beat Saber mod which allows you to easily look at the BeatSaver song data of the selected song.",
   "gameVersion": "1.9.1",
   "dependsOn": {
