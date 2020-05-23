@@ -154,18 +154,6 @@ namespace SongInfoViewer
             }
         }
 
-        private string _desc = "Description: ";
-        [UIValue("desc")]
-        public string Desc
-        {
-            get => _desc;
-            set
-            {
-                _desc = value.StripTMPTags();
-                NotifyPropertyChanged();
-            }
-        }
-
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             try
@@ -176,25 +164,6 @@ namespace SongInfoViewer
             {
                 Plugin.Log.Error($"Error Invoking PropertyChanged: {ex.Message}");
                 Plugin.Log.Error(ex);
-            }
-        }
-
-        [UIAction("toggle")]
-        public void Toggle()
-        {
-            var tableView = TableView(ref _levelCollectionTableView);
-            var cells = VisibleCells(ref tableView);
-
-            foreach (var cell in cells)
-            {
-                if (cell is LevelListTableCell)
-                {
-                    var c = cell as LevelListTableCell;
-                    Background(ref c).enabled = true;
-
-                    Plugin.Log.Info(Background(ref c).color.ToString());
-                    Background(ref c).color = new Color(1f, 0f, 0f, .5f);
-                }
             }
         }
     }
