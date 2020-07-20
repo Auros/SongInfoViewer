@@ -33,11 +33,8 @@ namespace SongInfoViewer
             Harmony = new Harmony("dev.auros.songinfoviewer");
             Harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-            BSEvents.lateMenuSceneLoadedFresh += delegate (ScenesTransitionSetupDataSO so)
-            {
-                var siv = new GameObject("Song Info Viewer").AddComponent<SongInfoViewer>();
-                siv.SetHost(_host);
-            };
+            BSEvents.lateMenuSceneLoadedFresh -= OnLateMenuSceneLoadedFresh;
+            BSEvents.lateMenuSceneLoadedFresh += OnLateMenuSceneLoadedFresh;
             _host = new SIVHost();
             
             GameplaySetup.instance.AddTab("SongInfoViewer", "SongInfoViewer.song-info-view.bsml", _host);
@@ -49,9 +46,16 @@ namespace SongInfoViewer
             Harmony?.UnpatchAll();
             Harmony = null;
 
+            BSEvents.lateMenuSceneLoadedFresh -= OnLateMenuSceneLoadedFresh;
             _host = null;
 
             GameplaySetup.instance.RemoveTab("SongInfoViewer");
+        }
+
+        private void OnLateMenuSceneLoadedFresh(ScenesTransitionSetupDataSO so)
+        {
+            var siv = new GameObject("Song Info Viewer").AddComponent<SongInfoViewer>();
+            siv.SetHost(_host);
         }
     }
 }
