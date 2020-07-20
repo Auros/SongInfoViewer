@@ -33,7 +33,6 @@ namespace SongInfoViewer
             Harmony = new Harmony("dev.auros.songinfoviewer");
             Harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-            BSEvents.lateMenuSceneLoadedFresh -= OnLateMenuSceneLoadedFresh;
             BSEvents.lateMenuSceneLoadedFresh += OnLateMenuSceneLoadedFresh;
             _host = new SIVHost();
             
